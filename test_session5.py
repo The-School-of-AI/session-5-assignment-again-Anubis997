@@ -11,6 +11,7 @@ from session5 import squared_power_list
 from session5 import polygon_area
 from session5 import temp_converter
 from session5 import speed_converter
+from session5 import time_it
 
 README_CONTENT_CHECK_FOR = [
     'time_it(fn, *args, repetitions= 1, **kwargs)',
@@ -68,51 +69,6 @@ def test_session5_function_name_had_cap_letter():
 
 
 ############################## Assignment Validations###########################
-
-def test_session5_time_it_print():
-    """ Test time_it with print function, repetitions=5
-        A. failures_message: time_it can't time print function
-        B. Once you write this test, it needs to print the failure_message
-        C. Delete lines A, B and C, write proper function description after writing this test successfully. 
-    """
-    assert True == False, "You need to write this test!"
-
-
-def test_session5_time_it_squared_power_list():
-    """Test time_it with squared_power function, repetitions=5
-        A. failures_message: time_it can't time squared_power_list function
-        B. Once you write this test, it needs to print the failure_message
-        C. Delete lines A, B and C, write proper function description after writing this test successfully. 
-    """
-    assert True == False, "You need to write this test!"
-
-
-def test_session5_time_it_polygon_area():
-    """Test time_it with polygon_area function, repetitions=10
-        A. failures_message: time_it can't time polygon_area function
-        B. Once you write this test, it needs to print the failure_message
-        C. Delete lines A, B and C, write proper function description after writing this test successfully. 
-    """
-    assert True == False, "You need to write this test!"
-
-
-def test_session5_time_it_temp_converter():
-    """Test time_it with temp_converter function, repetitions=100
-        A. failures_message: time_it can't time temp_converter function
-        B. Once you write this test, it needs to print the failure_message
-        C. Delete lines A, B and C, write proper function description after writing this test successfully. 
-    """
-    assert True == False, "You need to write this test!"
-
-
-def test_session5_time_it_speed_converter():
-    """Test time_it with speed_converter function, repetitions=200
-        A. failures_message: time_it can't time speed_converter function
-        B. Once you write this test, it needs to print the failure_message
-        C. Delete lines A, B and C, write proper function description after writing this test successfully. 
-    """
-    assert True == False, "You need to write this test!"
-
 
 
 ####################### Validations for time_it#################################
