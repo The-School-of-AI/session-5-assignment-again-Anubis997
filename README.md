@@ -2,7 +2,7 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=15402210&assignment_repo_type=AssignmentRepo)
 # epai5session5-template
 
-# The Time_it function:
+# The time_it(fn, *args, repetitions= 1, **kwargs) function:
 The time_it function is designed to measure the average execution time of a given function over a given number of iterations. It takes as input the function fn and its location arguments *args and keyword arguments **kwargs. Also given is the number of iterations of the iterations, the default value is 1. It executes the operation multiple times, calculates the total elapsed time and returns the average execution time.
 
 # Squared_power_list function:
