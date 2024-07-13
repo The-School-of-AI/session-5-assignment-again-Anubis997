@@ -54,19 +54,19 @@ def temp_converter(temp, *args, temp_given_in = 'f', **kwargs):
     """Converts temprature from celsius 'c' to fahrenheit 'f' or
     fahrenheit to celsius"""
 
-    if temp_given_in not in ['f', 'c']:
+    if temp_given_in not in ['f', 'c',"F","C"]:
             raise ValueError("Invalid temperature scale specified")
 
     if not isinstance(temp, (int, float)):
             raise TypeError("Temperature should be an integer or float")
 
         # Temperature conversion
-    if temp_given_in == 'f':
+    if temp_given_in in ('f','F'):
           if temp < -459.67:
                 raise ValueError("Temperature is below absolute zero")
           else:
                 return (temp - 32) * 5 / 9
-    elif temp_given_in == 'c':
+    elif temp_given_in in ('c','C'):
           if temp < -273.15:
                 raise ValueError("Temperature is below absolute zero")
           else:
