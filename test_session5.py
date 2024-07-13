@@ -21,55 +21,50 @@ README_CONTENT_CHECK_FOR = [
 ]
 
 def test_session5_readme_exists():
-    """ A. failure_message: Found README.md file
-        B. Once you write this test, it needs to print the filures_message for failing this test.
-        C. Delete lines A, B and C, write proper function description after writing this test successfully. 
-    """
-    assert True == False, "You need to write this test!"
+    
+    assert os.path.isfile("README.md"), "README.md file missing!"
 
 def test_session5_readme_500_words():
-    """ A. failures_message: Make your README.md file interesting! Add atleast 500 words
-        B. Once you write this test, it needs to print the failure_message
-        C. Delete lines A, B and C, write proper function description after writing this test successfully. 
-    """
-    assert True == False, "You need to write this test!"
+    readme = open("README.md", "r")
+    readme_words = readme.read().split()
+    readme.close()
+    assert len(readme_words) >= 500, "Make your README.md file interesting! Add atleast 500 words"
+
 
 
 def test_session5_readme_proper_description():
-    """ A. failures_message: You have not described all the functions/classes well in your README.md file
-        B. Once you write this test, it needs to print the failure_message
-        C. Delete lines A, B and C, write proper function description after writing this test successfully. 
-    """
-    assert True == False, "You need to write this test!"
+    READMELOOKSGOOD = True
+    f = open("README.md", "r", encoding="utf-8")
+    content = f.read()
+    f.close()
+    for c in README_CONTENT_CHECK_FOR:
+        if c not in content:
+            READMELOOKSGOOD = False
+            pass
+    assert READMELOOKSGOOD == True, "You have not described all the functions/class well in your README.md file"
 
 
 def test_session5_readme_file_for_more_than_10_hashes():
-    """ A. failures_message: You have not described all the functions/classes well in your README.md file
-        B. Once you write this test, that checks formatting by checking # being used more than 10 times, \
-        it needs to print the failure_message
-        C. Delete lines A, B and C, write proper function description after writing this test successfully. 
-    """
-    assert True == False, "You need to write this test!"
+    f = open("README.md", "r", encoding="utf-8")
+    content = f.read()
+    f.close()
+    assert content.count("#") >= 10
 
 
 def test_session5_indentations():
-    """ Returns pass if used four spaces for each level of syntactically \
-        significant indenting (spaces%4 == 2 and spaces%4 ==0).
-        A.  failures_message_1: Your script contains misplaced indentations
-            failures_message_2: Your code indentation does not follow PEP8 guidelines
-        B. Once you write this test, it needs to print the failures_message
-        C. Delete lines A, B and C, write proper function description after writing this test successfully. 
-    """
-    assert True == False, "You need to write this test!"
+    ''' Returns pass if used four spaces for each level of syntactically \
+    significant indenting.'''
+    lines = inspect.getsource(session4)
+    spaces = re.findall('\n +.', lines)
+    for space in spaces:
+        assert len(space) % 4 == 2, "Your script contains misplaced indentations"
+        assert len(re.sub(r'[^ ]', '', space)) % 4 == 0, "Your code indentation does not follow PEP8 guidelines"
 
 
 def test_session5_function_name_had_cap_letter():
-    """ A. failures_message: You have used Capital letter(s) in your function names
-        B. Once you write this test, that checks formatting by checking # being used more than 10 times, \
-        it needs to print the failure_message
-        C. Delete lines A, B and C, write proper function description after writing this test successfully. 
-    """
-    assert True == False, "You need to write this test!"
+    functions = inspect.getmembers(session4, inspect.isfunction)
+    for function in functions:
+        assert len(re.findall('([A-Z])', function[0])) == 0, "You have used Capital letter(s) in your function names"
 
 
 ############################## Assignment Validations###########################
