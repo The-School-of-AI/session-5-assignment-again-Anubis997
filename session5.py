@@ -32,7 +32,7 @@ def squared_power_list(number,*args, start=0, end=5,**kwargs):
         raise ValueError("Invalid values for start, end, or both")
 
     # Calculation and list creation
-    result = [number ** i for i in range(start, end + 1)]
+    result = [number ** i for i in range(start, end)]
 
     return result
 
